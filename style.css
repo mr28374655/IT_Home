@@ -1,0 +1,209 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+:root {
+    --color-f:#fff;
+    --color-f2:#000;
+    --color-f3:#eee;
+    --color-f4:#DC143C
+    ;
+}
+*::after,
+*::before,
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+}
+#container {
+    min-height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTEyfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container::before {
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.typing {
+    /* margin-top: 15%; */
+    text-align: center;
+}
+
+h1 {
+    line-height: 60px;
+    text-align: center;
+    font-size: 3rem;
+    color: transparent;
+    letter-spacing: 1px;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    z-index: 2;
+}
+
+
+h1::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: var(--color-f4);
+    z-index: 2;
+}
+
+
+.bt{
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    margin-top: 7%;
+    padding: 15px 30px;
+    color: #2196f3;
+    text-transform: uppercase;
+    overflow: hidden;
+    font-size: 26px;
+    letter-spacing: 4px;
+    transition: 0.2s;
+    z-index: 2;
+}
+.bt:hover{
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3,
+    0 0 40px #2196f3,
+    0 0 80px #2196f3;
+    transition-delay: 1s;
+} 
+.bt span{
+    position: absolute;
+    display: block;
+}
+.bt span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,#2196f3 );
+}
+.bt:hover span:nth-child(1){
+    left: 100%;
+    transition: 1s;
+}
+.bt span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,#2196f3 );
+}
+.bt:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+.bt span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent,#2196f3 );
+}
+.bt:hover span:nth-child(2){
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+.bt span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(270deg, transparent,#2196f3 );
+}
+.bt:hover span:nth-child(4){
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+
+
+
+
+
+
+h1:nth-child(1) {
+    animation: main 0.5s linear 0.7s forwards;
+
+}
+h1:nth-child(2) {
+    animation: main 0.5s linear 2.2s forwards;
+
+}
+h1:nth-child(3) {
+    animation: main 0.5s linear 3.5s forwards;
+
+}
+
+@keyframes main {
+    100% {
+        color: var(--color-f);
+    }
+}
+
+
+
+
+h1:nth-child(1)::after {
+    animation: bg 1s linear 0.7s;
+}
+h1:nth-child(2)::after {
+    animation: bg 1s linear 2.2s;
+}
+h1:nth-child(3)::after {
+    
+    animation: bg 1s linear 3.5s;
+}
+
+@keyframes bg {
+    0% {
+        width: 100%;
+        left: 0%;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+
+
+
+
+
+@media (max-width:769px) {
+    h1 {
+        font-size: 1.6rem;
+        line-height: 40px;
+    }
+}
